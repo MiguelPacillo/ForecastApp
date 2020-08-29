@@ -1,0 +1,78 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-container {
+    width: 90%;
+    background-color: mediumseagreen;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+input {
+    height: 5vh;
+    font-size: 3vh;
+    width: 80%;
+    box-sizing: border-box;
+    float: left;
+}
+
+button {
+    height: 5vh;
+    width: 10%;
+    float: left;
+    font-size: 2vh;
+}
+
+.parent {
+    height: 70vh;
+    width: 20%;
+    float: left;
+    margin: 0px 0px 0px 0px;
+}
+
+.date {
+    width: 100%;
+    background-color: papayawhip;
+    font-size: 2vh;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.temperature-box {
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    font-size: 2vh;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: white;
+}
+
+.max-temp {
+    color: rgb(255, 115, 0);
+}
+
+.min-temp {
+    color:  rgb(0, 225, 255);
+}
+
+#dayOne {
+    background-color: red;
+}
+
+#dayTwo {
+    background-color: rgb(45, 172, 7);
+}
+
+#dayThree {
+    background-color: rgb(24, 5, 196);
+}
+
+#dayFour {
+    background-color: rgb(90, 0, 143);
+}
+
+#dayFive {
+    background-color: rgb(138, 135, 2);
+}

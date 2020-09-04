@@ -3,4 +3,4 @@ Search for any city in the world to get a detailed 5 day weather forecast. Creat
 
 ![Image1](https://i.imgur.com/lgmLEVq.png)
 
-![Image2](https://i.imgur.com/k7KTLKW.png)
+![Image2](https://i.imgur.com/0bNQxhX.png)

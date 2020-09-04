@@ -180,7 +180,10 @@ class Forecast {
         document.getElementById("thunderProbNight" + this.dayNumber).innerHTML = this.nightThunder; // Displays night thunder probability (more info)
         document.getElementById("snowProbNight" + this.dayNumber).innerHTML = this.nightSnow; // Displays night snow probability (more info)
 
+        // Resets the more info menu and button
+
         document.getElementById("moreInfo" + this.dayNumber).style.visibility = "hidden"
+        document.getElementById("moreInfoDay" + this.dayNumber).innerHTML = "More Information";
     }
 
     moreInformation() { // Handles more info button

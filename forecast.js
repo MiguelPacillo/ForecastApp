@@ -9,7 +9,7 @@ let monthsArray = ["January", "February", "March", "April", "May", "June", "July
 let assignList = [];
 
 window.onload = function() { // Initializes search for default location on load
-    // search();
+    search();
 }
 
 function unitChangerFunction() { // Changes units on button click
@@ -99,7 +99,7 @@ function assignForcast(searchKey) { // Uses the location key to find the forecas
                     dayOfTheWeek(forecastList[i].Date) // Date like [weekday] [month]/[day]
                     ))
 
-                document.getElementById("moreInfoDay" + days[i]).setAttribute("onclick", "assignList[" + i + "].moreInformation()");
+                document.getElementById("moreInfoDay" + days[i]).setAttribute("onclick", "assignList[" + i + "].moreInformation()"); // Sets onclick for more info button
         }
         
         for (let i = 0; i < assignList.length; i++) { // Calls display method for every day in the list
@@ -145,6 +145,8 @@ class Forecast {
 
                     this.date = date;
 
+                    this.showMoreInfo = false;
+
     }
 
     displayValues() {
@@ -177,11 +179,21 @@ class Forecast {
         document.getElementById("rainProbNight" + this.dayNumber).innerHTML = this.nightRain; // Displays night rain probability (more info)
         document.getElementById("thunderProbNight" + this.dayNumber).innerHTML = this.nightThunder; // Displays night thunder probability (more info)
         document.getElementById("snowProbNight" + this.dayNumber).innerHTML = this.nightSnow; // Displays night snow probability (more info)
+
+        document.getElementById("moreInfo" + this.dayNumber).style.visibility = "hidden"
     }
 
-    moreInformation() {
+    moreInformation() { // Handles more info button
 
-        document.getElementById("moreInfo" + this.dayNumber).style.visibility = "hidden"; // PROBLEM: Find a way to override css style or add the style in code
+        if (!this.showMoreInfo) { // If more info panel is currently hidden, show it on click
+            document.getElementById("moreInfo" + this.dayNumber).style.visibility = "visible";
+            document.getElementById("moreInfoDay" + this.dayNumber).innerHTML = "Less Information";
+            this.showMoreInfo = true;
+        } else { // Else hide it on click
+            document.getElementById("moreInfo" + this.dayNumber).style.visibility = "hidden";
+            document.getElementById("moreInfoDay" + this.dayNumber).innerHTML = "More Information";
+            this.showMoreInfo = false;
+        }
     }
     
 }

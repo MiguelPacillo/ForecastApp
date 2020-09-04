@@ -15,7 +15,7 @@
         <button class="button" id="searchButton" onclick="search()">Search</button>
         
         <div class="parent" id="dayOne">
-            <div class="date" id="dateOne">Monday 9/29</div>
+            <div class="date" id="dateOne"></div>
             <div class="temperature-box">
                 <span class="max-temp" id="maxTempOne"></span> / <span class="min-temp" id="minTempOne"></span>
             </div>
@@ -34,11 +34,12 @@
                 <span class="weather-label">Wind speed: <span class="wind-speed" id="windSpeedNightOne"></span> at <span class="wind-direction" id="windDirectionNightOne"></span></span>
             </div>
 
-            <button class="more-info" id="moreInfoDayOne">More Information</button>
+            <button class="info-button" id="moreInfoDayOne">More Information</button>
+
         </div>
         
         <div class="parent" id="dayTwo">
-            <div class="date" id="dateTwo">Monday 9/29</div>
+            <div class="date" id="dateTwo"></div>
             <div class="temperature-box">
                 <span class="max-temp" id="maxTempTwo"></span> / <span class="min-temp" id="minTempTwo"></span>
             </div>
@@ -57,11 +58,11 @@
                 <span class="weather-label">Wind speed: <span class="wind-speed" id="windSpeedNightTwo"></span> at <span class="wind-direction" id="windDirectionNightTwo"></span></span>
             </div>
 
-            <button class="more-info" id="moreInfoDayTwo">More Information</button>
+            <button class="info-button" id="moreInfoDayTwo">More Information</button>
         </div>
         
         <div class="parent" id="dayThree">
-            <div class="date" id="dateThree">Monday 9/29</div>
+            <div class="date" id="dateThree"></div>
             <div class="temperature-box">
                 <span class="max-temp" id="maxTempThree"></span> / <span class="min-temp" id="minTempThree"></span>
             </div>
@@ -80,11 +81,11 @@
                 <span class="weather-label">Wind speed: <span class="wind-speed" id="windSpeedNightThree"></span> at <span class="wind-direction" id="windDirectionNightThree"></span></span>
             </div>
 
-            <button class="more-info" id="moreInfoDayThree">More Information</button>
+            <button class="info-button" id="moreInfoDayThree">More Information</button>
         </div>
         
         <div class="parent" id="dayFour">
-            <div class="date" id="dateFour">Monday 9/29</div>
+            <div class="date" id="dateFour"></div>
             <div class="temperature-box">
                 <span class="max-temp" id="maxTempFour"></span> / <span class="min-temp" id="minTempFour"></span>
             </div>
@@ -103,11 +104,11 @@
                 <span class="weather-label">Wind speed: <span class="wind-speed" id="windSpeedNightFour"></span> at <span class="wind-direction" id="windDirectionNightFour"></span></span>
             </div>
 
-            <button class="more-info" id="moreInfoDayFour">More Information</button>
+            <button class="info-button" id="moreInfoDayFour">More Information</button>
         </div>
         
         <div class="parent" id="dayFive">
-            <div class="date" id="dateFive">Monday 9/29</div>
+            <div class="date" id="dateFive"></div>
             <div class="temperature-box">
                 <span class="max-temp" id="maxTempFive"></span> / <span class="min-temp" id="minTempFive"></span>
             </div>
@@ -126,8 +127,48 @@
                 <span class="weather-label">Wind speed: <span class="wind-speed" id="windSpeedNightFive"></span> at <span class="wind-direction" id="windDirectionNightFive"></span></span>
             </div>
 
-            <button class="more-info" id="moreInfoDayFive">More Information</button>
+            <button class="info-button" id="moreInfoDayFive">More Information</button>
         </div>
+
+        <div class="moreinfo-parent">
+            <div class="more-info" id="moreInfoOne">
+                <span class="real-feel">Feels like: <span class="moreinfo-day" id="realFeelHighOne"></span> / <span class="moreinfo-night" id="realFeelLowOne"></span></span>
+                <span class="rain">Rain probability: <span class="moreinfo-day" id="rainProbDayOne"></span> / <span class="moreinfo-night" id="rainProbNightOne"></span></span>
+                <span class="thunder">Thunder probability: <span class="moreinfo-day" id="thunderProbDayOne"></span> / <span class="moreinfo-night" id="thunderProbNightOne"></span></span>
+                <span class="snow">Snow probability: <span class="moreinfo-day" id="snowProbDayOne"></span> / <span class="moreinfo-night" id="snowProbNightOne"></span></span>
+                <span class="moon">Moon phase: <span class="moon-phase" id="moonPhaseOne"></span></span>
+            </div>
+            <div class="more-info" id="moreInfoTwo">
+                <span class="real-feel">Feels like: <span class="moreinfo-day" id="realFeelHighTwo"></span> / <span class="moreinfo-night" id="realFeelLowTwo"></span></span>
+                <span class="rain">Rain probability: <span class="moreinfo-day" id="rainProbDayTwo"></span> / <span class="moreinfo-night" id="rainProbNightTwo"></span></span>
+                <span class="thunder">Thunder probability: <span class="moreinfo-day" id="thunderProbDayTwo"></span> / <span class="moreinfo-night" id="thunderProbNightTwo"></span></span>
+                <span class="snow">Snow probability: <span class="moreinfo-day" id="snowProbDayTwo"></span> / <span class="moreinfo-night" id="snowProbNightTwo"></span></span>
+                <span class="moon">Moon phase: <span class="moon-phase" id="moonPhaseTwo"></span></span>
+            </div>
+            <div class="more-info" id="moreInfoThree">
+                <span class="real-feel">Feels like: <span class="moreinfo-day" id="realFeelHighThree"></span> / <span class="moreinfo-night" id="realFeelLowThree"></span></span>
+                <span class="rain">Rain probability: <span class="moreinfo-day" id="rainProbDayThree"></span> / <span class="moreinfo-night" id="rainProbNightThree"></span></span>
+                <span class="thunder">Thunder probability: <span class="moreinfo-day" id="thunderProbDayThree"></span> / <span class="moreinfo-night" id="thunderProbNightThree"></span></span>
+                <span class="snow">Snow probability: <span class="moreinfo-day" id="snowProbDayThree"></span> / <span class="moreinfo-night" id="snowProbNightThree"></span></span>
+                <span class="moon">Moon phase: <span class="moon-phase" id="moonPhaseThree"></span></span>
+            </div>
+            <div class="more-info" id="moreInfoFour">
+                <span class="real-feel">Feels like: <span class="moreinfo-day" id="realFeelHighFour"></span> / <span class="moreinfo-night" id="realFeelLowFour"></span></span>
+                <span class="rain">Rain probability: <span class="moreinfo-day" id="rainProbDayFour"></span> / <span class="moreinfo-night" id="rainProbNightFour"></span></span>
+                <span class="thunder">Thunder probability: <span class="moreinfo-day" id="thunderProbDayFour"></span> / <span class="moreinfo-night" id="thunderProbNightFour"></span></span>
+                <span class="snow">Snow probability: <span class="moreinfo-day" id="snowProbDayFour"></span> / <span class="moreinfo-night" id="snowProbNightFour"></span></span>
+                <span class="moon">Moon phase: <span class="moon-phase" id="moonPhaseFour"></span></span>
+            </div>
+            <div class="more-info" id="moreInfoFive">
+                <span class="real-feel">Feels like: <span class="moreinfo-day" id="realFeelHighFive"></span> / <span class="moreinfo-night" id="realFeelLowFive"></span></span>
+                <span class="rain">Rain probability: <span class="moreinfo-day" id="rainProbDayFive"></span> / <span class="moreinfo-night" id="rainProbNightFive"></span></span>
+                <span class="thunder">Thunder probability: <span class="moreinfo-day" id="thunderProbDayFive"></span> / <span class="moreinfo-night" id="thunderProbNightFive"></span></span>
+                <span class="snow">Snow probability: <span class="moreinfo-day" id="snowProbDayFive"></span> / <span class="moreinfo-night" id="snowProbNightFive"></span></span>
+                <span class="moon">Moon phase: <span class="moon-phase" id="moonPhaseFive"></span></span>
+            </div>
+            
+        </div>
+
     </div>
 </body>
 </html>

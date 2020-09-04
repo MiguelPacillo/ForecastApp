@@ -6,9 +6,10 @@ let unitSpeed = "mph";
 let days = ["One", "Two", "Three", "Four", "Five"];
 let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let monthsArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+let assignList = [];
 
 window.onload = function() { // Initializes search for default location on load
-    search();
+    // search();
 }
 
 function unitChangerFunction() { // Changes units on button click
@@ -68,7 +69,7 @@ function assignForcast(searchKey) { // Uses the location key to find the forecas
         .then(res => res.json())
         .then(data => {
             let forecastList = data.DailyForecasts;
-            let assignList = []; // Blanks list of forecast objects
+            assignList = []; // Blanks list of forecast objects
 
             for (let i = 0; i < forecastList.length; i++) {
                 assignList.push(new Forecast(
@@ -97,6 +98,8 @@ function assignForcast(searchKey) { // Uses the location key to find the forecas
                     days[i], // Day number
                     dayOfTheWeek(forecastList[i].Date) // Date like [weekday] [month]/[day]
                     ))
+
+                document.getElementById("moreInfoDay" + days[i]).setAttribute("onclick", "assignList[" + i + "].moreInformation()");
         }
         
         for (let i = 0; i < assignList.length; i++) { // Calls display method for every day in the list
@@ -149,6 +152,9 @@ class Forecast {
         document.getElementById("date" + this.dayNumber).innerHTML = this.date; // Displays date for each forecast day
         document.getElementById("maxTemp" + this.dayNumber).innerHTML = this.tempMax; // Displays max temp value
         document.getElementById("minTemp" + this.dayNumber).innerHTML = this.tempMin; // Displays min temp value
+        document.getElementById("realFeelHigh" + this.dayNumber).innerHTML = this.realFeelMax; // Displays max real feel temp (more info)
+        document.getElementById("realFeelLow" + this.dayNumber).innerHTML = this.realFeelMin; // Displays min real feel temp (more info)
+        document.getElementById("moonPhase" + this.dayNumber).innerHTML = this.moonPhase; // Displays moon phase (more info)
         
         // Display day statistics
 
@@ -157,6 +163,9 @@ class Forecast {
         document.getElementById("preciProbabilityDay" + this.dayNumber).innerHTML = this.dayPrecipitation; // Displays day precipitation probability
         document.getElementById("windSpeedDay" + this.dayNumber).innerHTML = this.dayWindSpeed; // Displays day wind speed
         document.getElementById("windDirectionDay" + this.dayNumber).innerHTML = this.dayWindDirection; // Displays day wind direction
+        document.getElementById("rainProbDay" + this.dayNumber).innerHTML = this.dayRain; // Displays day rain probability (more info)
+        document.getElementById("thunderProbDay" + this.dayNumber).innerHTML = this.dayThunder; // Displays day thunder probability (more info)
+        document.getElementById("snowProbDay" + this.dayNumber).innerHTML = this.daySnow; // Displays day snow probability (more info)
 
         // Display night statistics
 
@@ -165,6 +174,14 @@ class Forecast {
         document.getElementById("preciProbabilityNight" + this.dayNumber).innerHTML = this.nightPrecipitation; // Displays night precipitation probability
         document.getElementById("windSpeedNight" + this.dayNumber).innerHTML = this.nightWindSpeed; // Displays night wind speed
         document.getElementById("windDirectionNight" + this.dayNumber).innerHTML = this.nightWindDirection; // Displays night wind direction
+        document.getElementById("rainProbNight" + this.dayNumber).innerHTML = this.nightRain; // Displays night rain probability (more info)
+        document.getElementById("thunderProbNight" + this.dayNumber).innerHTML = this.nightThunder; // Displays night thunder probability (more info)
+        document.getElementById("snowProbNight" + this.dayNumber).innerHTML = this.nightSnow; // Displays night snow probability (more info)
+    }
+
+    moreInformation() {
+
+        document.getElementById("moreInfo" + this.dayNumber).style.visibility = "hidden"; // PROBLEM: Find a way to override css style or add the style in code
     }
     
 }

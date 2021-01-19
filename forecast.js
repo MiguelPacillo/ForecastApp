@@ -1,4 +1,4 @@
-let apiKey = "uo2MGFBbCEhdFr6XBxNld7JW67byWPGO";
+let apiKey = ""; // Must use your own API key
 
 let metric = false;
 let unitTemp = "°F";
